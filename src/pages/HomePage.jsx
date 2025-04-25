@@ -88,11 +88,21 @@ const HomePage = () => {
 
       {/* Menu Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-8">
-        {[gbr4, gbr5, gbr6, gbr7, gbr8, gbr9, gbr10, gbr11, gbr9].map((src, idx) => (
+        {[
+          { src: gbr4, title: "Nasi Goreng Kampung", price: "IDR 85.000" },
+          { src: gbr5, title: "Rendang Padang", price: "IDR 120.000" },
+          { src: gbr6, title: "Sate Ayam Madura", price: "IDR 75.000" },
+          { src: gbr7, title: "Sop Buntut Bakar", price: "IDR 140.000" },
+          { src: gbr8, title: "Ayam Betutu Bali", price: "IDR 135.000" },
+          { src: gbr9, title: "Gurame Asam Manis", price: "IDR 160.000" },
+          { src: gbr10, title: "Gado-gado Jakarta", price: "IDR 70.000" },
+          { src: gbr11, title: "Es Teler Spesial", price: "IDR 55.000" },
+          { src: gbr9, title: "Pisang Goreng Keju", price: "IDR 50.000" },
+        ].map((item, idx) => (
           <div key={idx} className="bg-white p-4">
-            <img src={src} alt={`Menu ${idx + 1}`} className="w-full h-60 object-cover" />
-            <h3 className="text-lg mt-2 font-caprasimo text-primary">Judul Menu</h3>
-            <p className="text-base font-medium font-caprasimo text-secondary">IDR 100.000</p>
+            <img src={item.src} alt={item.title} className="w-full h-60 object-cover" />
+            <h3 className="text-lg mt-2 font-caprasimo text-primary">{item.title}</h3>
+            <p className="text-base font-medium font-caprasimo text-secondary">{item.price}</p>
           </div>
         ))}
       </div>
